@@ -1,5 +1,6 @@
 Feature: Dummy Authentication Tests
-  As a tester
+#TODO:The application under test is a basic URL, so advanced scenarios can not be simulated.
+  As a user
   I want to test advanced security features
   So that I can ensure robustness
 

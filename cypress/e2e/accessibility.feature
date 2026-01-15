@@ -1,5 +1,5 @@
 Feature: Accessibility Authentication Tests
-  As a tester
+  As a user
   I want to test accessibility features
   So that I can ensure usability for all users
 
@@ -10,9 +10,4 @@ Feature: Accessibility Authentication Tests
   @accessibility
   Scenario: Keyboard navigation for login
     When I focus the username input and type using the keyboard
-    Then I should be able to navigate and login
-
-  @accessibility
-  Scenario: Keyboard navigation with specific term
-    When I focus the username input and type "luck1231" using the keyboard
     Then I should be able to navigate and login

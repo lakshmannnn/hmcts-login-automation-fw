@@ -213,7 +213,7 @@ Then('I should be logged in via API', () => {
 /**
  * Shared step: User logged in under 2 seconds
  */
-Then('the user should be logged in under 2 seconds response time', () => {
+Then('The user should be logged in under 2 seconds response time', () => {
   cy.get('@responseTime').then((time) => {
     cy.log(`Checking response time: ${time}ms`);
     expect(time).to.be.lessThan(2000);
@@ -226,4 +226,11 @@ Then('the user should be logged in under 2 seconds response time', () => {
 Then('I should see appropriate messages', () => {
   // For equivalence partitioning, multiple messages
   cy.log('Appropriate messages shown');
+});
+
+/**
+ * Shared step: UI unresponsive
+ */
+Then('UI should remain responsive and show no unexpected errors', () => {
+  cy.get('body').should('not.contain', 'An unexpected error occurred');
 });

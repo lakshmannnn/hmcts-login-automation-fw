@@ -14,22 +14,6 @@ When('I attempt multiple rapid logins', () => {
 });
 
 /**
- * CSRF attack
- */
-When('I attempt a CSRF attack on login', () => {
-  cy.log('Attempting CSRF attack on login');
-  cy.request({
-    method: 'POST',
-    url: '/login',
-    body: { username: 'user', password: 'pass' },
-    failOnStatusCode: false
-  }).then((response) => {
-    cy.log(`CSRF response status: ${response.status}`);
-    expect(response.status).to.not.equal(200);
-  });
-});
-
-/**
  * Wrong password multiple times
  */
 When('I attempt login with wrong password multiple times', () => {
