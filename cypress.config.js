@@ -7,6 +7,10 @@ module.exports = defineConfig({
   e2e: {
     specPattern: "cypress/e2e/**/*.feature",
     baseUrl: "https://www.demoblaze.com",
+    env:{
+      defaultUser:"luck123",
+      defaultPwd:"luck123"
+    },
     reporter: 'mochawesome',
     reporterOptions: {
       reportDir: 'cypress/reports',
