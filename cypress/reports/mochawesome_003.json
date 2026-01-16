@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 2,
+    "failures": -1,
+    "start": "2026-01-16T00:55:36.607Z",
+    "end": "2026-01-16T00:55:36.641Z",
+    "duration": 34,
+    "testsRegistered": 2,
+    "passPercent": null,
+    "pendingPercent": 100,
+    "other": 1,
+    "hasOther": true,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "31a416ff-e5e8-4e61-85a4-b244ddad9ce9",
+      "title": "",
+      "fullFile": "cypress\\e2e\\performance.feature",
+      "file": "cypress\\e2e\\performance.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "50c7a557-e0be-4e2a-ba4a-71e9475b4d66",
+          "title": "Performance Authentication Tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login - Response time",
+              "fullTitle": "Performance Authentication Tests Login - Response time",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "fc652f60-82ec-432f-9566-0672dfbd07ac",
+              "parentUUID": "50c7a557-e0be-4e2a-ba4a-71e9475b4d66",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Rapid typing in login field",
+              "fullTitle": "Performance Authentication Tests Rapid typing in login field",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "831c4ffb-c8c2-4431-8bd9-1000d268bb5a",
+              "parentUUID": "50c7a557-e0be-4e2a-ba4a-71e9475b4d66",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [],
+          "pending": [
+            "fc652f60-82ec-432f-9566-0672dfbd07ac",
+            "831c4ffb-c8c2-4431-8bd9-1000d268bb5a"
+          ],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

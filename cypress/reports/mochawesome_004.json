@@ -1,0 +1,162 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 4,
+    "failures": -3,
+    "start": "2026-01-16T00:55:38.278Z",
+    "end": "2026-01-16T00:55:38.322Z",
+    "duration": 44,
+    "testsRegistered": 4,
+    "passPercent": null,
+    "pendingPercent": 100,
+    "other": 3,
+    "hasOther": true,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "dcfa29c0-1bfc-4337-9d4b-071fd246c62a",
+      "title": "",
+      "fullFile": "cypress\\e2e\\security.feature",
+      "file": "cypress\\e2e\\security.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0a71aa47-5ca1-4f7f-b99c-4ddb7f2054d6",
+          "title": "Security Authentication Tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "SQL injection in username",
+              "fullTitle": "Security Authentication Tests SQL injection in username",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "78c38e8c-ce98-4ac7-9092-32b4791bed43",
+              "parentUUID": "0a71aa47-5ca1-4f7f-b99c-4ddb7f2054d6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "XSS in password",
+              "fullTitle": "Security Authentication Tests XSS in password",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "1f25ab77-5f72-4ea1-889e-e0fcc005cf2b",
+              "parentUUID": "0a71aa47-5ca1-4f7f-b99c-4ddb7f2054d6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify login status after cache deletion",
+              "fullTitle": "Security Authentication Tests Verify login status after cache deletion",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "d1624e0b-a846-45d0-b8d8-67a1f3e2ff31",
+              "parentUUID": "0a71aa47-5ca1-4f7f-b99c-4ddb7f2054d6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "CSRF protection test",
+              "fullTitle": "Security Authentication Tests CSRF protection test",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "87fd39fd-2a58-436f-bbb3-a45aa34be4d8",
+              "parentUUID": "0a71aa47-5ca1-4f7f-b99c-4ddb7f2054d6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [],
+          "pending": [
+            "78c38e8c-ce98-4ac7-9092-32b4791bed43",
+            "1f25ab77-5f72-4ea1-889e-e0fcc005cf2b",
+            "d1624e0b-a846-45d0-b8d8-67a1f3e2ff31",
+            "87fd39fd-2a58-436f-bbb3-a45aa34be4d8"
+          ],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
