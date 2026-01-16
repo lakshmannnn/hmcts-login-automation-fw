@@ -91,7 +91,8 @@ cypress/
    ```bash
    npx cypress run --headed --browser chrome
    ```
-![alt text](image.png)
+
+![alt text](<test execution summary.jpg>)
 
 ### Generating Reports
 
