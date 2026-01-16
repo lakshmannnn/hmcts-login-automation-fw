@@ -72,6 +72,10 @@ cypress/
    ```bash
    npm install cypress --save-dev
    ```
+4. Install dependencies:
+   ```bash
+   npm install npx
+   ```
 
 ### Running Tests
 
@@ -105,8 +109,9 @@ To merge reports:
 ```bash
 npx marge mochawesome-report-merged.json --reportDir cypress/reports/custom-reports --reportTitle 'Test Results'
 ```
-You can refer this folder for HTML reports: demoblaze-login-auto\cypress\reports\custom-reports
-You can refer package.json and use various commands(self-explanatory-names) with
+You can refer below folder for HTML reports:
+   demoblaze-login-auto\cypress\reports\custom-reports
+You can refer package.json and use various commands(self-explanatory-names) :
    'npm run command-name-from-packagedotjson'
 
 ## Test Scenarios
@@ -159,7 +164,7 @@ You can refer package.json and use various commands(self-explanatory-names) with
 
 ### Test Data Management
 - Fixtures for static data
-- Dynamic user generation for unique test data
+- Dynamic user generation (synthetic test data) for unique test data
 
 ### Reporting and Logging
 - Mochawesome for detailed HTML/JSON reports
@@ -171,6 +176,10 @@ You can refer package.json and use various commands(self-explanatory-names) with
 - Exception handling
 - Version control with Git
 - Clean, readable code with comments
+- Custom Commands, utils and fixtures for maintenance
+- Setup and Teardown to execute the tests independently
+
+
 
 ## Configuration
 
@@ -183,6 +192,8 @@ You can refer package.json and use various commands(self-explanatory-names) with
 Given more time, I would:
 - Implement additional advanced scenarios such as scenarios part of 'tobe.feature'
 - Further finetuning by introducing Scenario Outline and forEach to parameterize various permutation/combinations of username/pwd
+- USe fixtures and Custom commands to make framework better maintainable,scalable.
+- Enhance Cross browser testing (for now we can use 'npm run runMultiBrowser' from package.json)
 - Add API testing integration, mockup and contract testing.
 - Implement parallel test execution
 - Add data-driven testing with CSV/JSON
