@@ -1,6 +1,7 @@
-!              ![alt text](image-1.png)
-                HM Courts and tribunals service
-                         Coding Exercise
+   !                            ![alt text](image-1.png)
+
+#                                CODING EXERCISE
+
 # DemoBlaze Login Automation Framework
 
 This project implements a test automation framework for testing the login functionality of the DemoBlaze web application using Cypress with Cucumber (BDD).
