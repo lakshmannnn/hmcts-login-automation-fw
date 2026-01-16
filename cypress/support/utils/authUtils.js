@@ -27,12 +27,16 @@ export function clearBrowserStorage() {
  */
 export function logoutIfLoggedIn() {
   cy.get('body').then($body => {
-    if ($body.find('#logout2').length > 0) {
-      cy.get('#logout2').click();
+    const $logout = $body.find('#logout2');
+
+    // Element exists and is hidden (display: none)
+    if ($logout.length > 0 && !$logout.is(':visible')) {
+      cy.wrap($logout).click({ force: true });
       cy.log('User logged out');
     }
   });
 }
+
 
 /**
  * Verifies user is not logged in

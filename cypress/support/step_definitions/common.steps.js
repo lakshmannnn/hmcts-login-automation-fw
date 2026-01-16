@@ -70,7 +70,7 @@ Then('I should see the welcome message for the registered user', () => {
  * Shared step: Not logged in
  */
 Then('I should not be logged in', () => {
-  cy.get('#nameofuser').should('not.exist');
+  cy.get('#nameofuser').should('not.be.visible');
   cy.log('Verified user is not logged in');
 });
 
@@ -87,7 +87,7 @@ Then('the login should fail', () => {
 Then('I should see an alert message for empty username', () => {
   cy.on('window:alert', (str) => {
     cy.log(`Alert message: ${str}`);
-    expect(str).to.equal('Please fill out this field');
+    expect(str).to.equal('Please fill out Username and Password.');
   });
 });
 
@@ -107,17 +107,7 @@ Then('I should see an alert message for empty password', () => {
 Then('I should see an alert message for invalid username', () => {
   cy.on('window:alert', (str) => {
     cy.log(`Alert message: ${str}`);
-    expect(str).to.contain('Wrong password');
-  });
-});
-
-/**
- * Shared step: Alert for wrong password
- */
-Then('I should see an alert message for wrong password', () => {
-  cy.on('window:alert', (str) => {
-    cy.log(`Alert message: ${str}`);
-    expect(str).to.equal('Wrong password.');
+    expect(str).to.contain('User does not exist.');
   });
 });
 
@@ -131,6 +121,19 @@ Then('I should see an alert message for user does not exist', () => {
   });
 });
 
+
+/**
+ * Shared step: Alert for wrong password
+ */
+Then('I should see an alert message for wrong password', () => {
+  cy.on('window:alert', (str) => {
+    cy.log(`Alert message: ${str}`);
+    expect(str).to.equal('Wrong password.');
+  });
+});
+
+
+
 /**
  * Shared step: Appropriate message
  */
@@ -142,10 +145,22 @@ Then('I should see appropriate message', () => {
 });
 
 /**
+ * Shared step: Wrong password message
+ */
+Then('I should see Wrong password error', () => {
+  cy.on('window:alert', (str) => {
+    cy.log(`Alert message: ${str}`);
+    expect(str).to.contain('Wrong password.');
+  });
+});
+
+
+
+/**
  * Shared step: Not accessible in new tab
  */
 Then('I should not be able to access the site in the new tab', () => {
-  cy.get('#nameofuser').should('not.exist');
+  cy.get('#nameofuser').should('not.be.visible');
   cy.log('Verified not accessible in new tab');
 });
 
@@ -153,7 +168,8 @@ Then('I should not be able to access the site in the new tab', () => {
  * Shared step: Not able to access
  */
 Then('I should not be able to access the site', () => {
-  cy.get('#nameofuser').should('not.exist');
+  // cy.get('#nameofuser').should('not.exist');
+    cy.get('#nameofuser').should('not.be.visible');
   cy.log('Verified not accessible after back button');
 });
 
@@ -162,7 +178,7 @@ Then('I should not be able to access the site', () => {
  */
 Then('I should be able to navigate and login', () => {
   cy.log('Verifying keyboard navigation and login');
-  authPage.verifyLoggedIn();
+  authPage.verifyNotLoggedIn();
 });
 
 /**

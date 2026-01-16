@@ -9,5 +9,5 @@ Feature: Accessibility Authentication Tests
 
   @accessibility
   Scenario: Keyboard navigation for login
-    When I focus the username input and type using the keyboard
+    When I focus the username and password inputs and type using the keyboard
     Then I should be able to navigate and login

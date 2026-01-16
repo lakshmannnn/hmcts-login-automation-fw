@@ -95,3 +95,25 @@ When('I logout and use the back button', () => {
   cy.log('Logged out and using back button');
   cy.go('back');
 });
+
+
+/**
+ * Attempt login with case sensitive characters
+ */
+When('I attempt to login with case sensitive characters in username', () => {
+  const user = 'LUcK123';
+  const pass = 'luck123';
+  cy.log('Attempting login with case sensitive characters in username');
+  authPage.attemptLogin(user, pass);
+});
+
+
+/**
+ * Attempt login with leading or trailing spaces
+ */
+When('I attempt to login with leading or trailing spaces in username', () => {
+  const user = '    luck123   ';
+  const pass = 'luck123';
+  cy.log('Attempting login with leading or trailing spaces in username');
+  authPage.attemptLogin(user, pass);
+});

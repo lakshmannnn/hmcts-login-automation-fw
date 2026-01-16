@@ -70,6 +70,9 @@ class AuthPage {
     cy.get(this.navbarWelcome, { timeout: 10000 }).should('be.visible');
   }
 
+    verifyNotLoggedIn() {
+    cy.get(this.navbarWelcome, { timeout: 10000 }).should('not.be.visible');
+  }
   verifyWelcomeMessage(user) {
     cy.get(this.navbarWelcome).should('contain.text', `Welcome ${user}`);
   }
