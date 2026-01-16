@@ -23,7 +23,7 @@
     "generate-fresh-reports-use-run-not-open": "npx cypress run --spec cypress/e2e/basic.feature --env TAGS='@caseVariations or @noSearchTerm' --headed --browser chrome",
     "cleanReports": "rm -rf cypress/reports/* cypress/reports/mochawesome-report-merged.json cypress/reports/custom-reports/*",
     "runTestsToGenerateReports": "npx cypress run --spec cypress/e2e --env TAGS='@tobe or @performance' --headed --browser chrome",
-    "mergeReports": "npx mochawesome-merge cypress/reports/*.json > cypress/reports/mochawesome-report-merged.json",
+    "mergeReports": "npx mochawesome-merge cypress/reports/*.json > mochawesome-report-merged.json",
     "generateReports": "npx marge cypress/reports/mochawesome-report-merged.json --reportDir cypress/reports/custom-reports --reportTitle 'Test Results'",
     "cleanAndGenerateReports": "npm run cleanReports && npm run runTestsToGenerateReports",
     "mergeAndGenerateReports": "npm run mergeReports && npm run generateReports",
