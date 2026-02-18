@@ -66,6 +66,7 @@ class AuthPage {
     cy.get(this.loginSubmit).click();
   }
 
+
   verifyLoggedIn() {
     cy.get(this.navbarWelcome, { timeout: 10000 }).should('be.visible');
   }

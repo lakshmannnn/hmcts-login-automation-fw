@@ -24,7 +24,7 @@
     "cleanReports": "rm -rf cypress/reports/* cypress/reports/mochawesome-report-merged.json cypress/reports/custom-reports/*",
     "runTestsToGenerateReports": "npx cypress run --spec cypress/e2e --env TAGS='@tobe or @performance' --headed --browser chrome",
     "mergeReports": "npx mochawesome-merge cypress/reports/*.json > mochawesome-report-merged.json",
-    "generateReports": "npx marge cypress/reports/mochawesome-report-merged.json --reportDir cypress/reports/custom-reports --reportTitle 'Test Results'",
+    "generateReports": "npx marge mochawesome-report-merged.json --reportDir cypress/reports/custom-reports --reportTitle 'Test Results'",
     "cleanAndGenerateReports": "npm run cleanReports && npm run runTestsToGenerateReports",
     "mergeAndGenerateReports": "npm run mergeReports && npm run generateReports",
     "e2eReports": "npm run cleanAndGenerateReports && npm run mergeAndGenerateReports",
@@ -41,7 +41,7 @@
     "@testing-library/cypress": "^10.0.3",
     "axe-core": "^4.10.3",
     "babel-plugin-istanbul": "^7.0.0",
-    "cypress": "^14.5.3",
+    "cypress": "^14.5.4",
     "cypress-axe": "^1.6.0",
     "cypress-cucumber-tagging": "^1.0.3",
     "cypress-xpath": "^2.0.1",
@@ -53,6 +53,7 @@
   },
   "dependencies": {
     "cypress-tags": "^1.2.2",
-    "npx": "^10.2.2"
+    "npx": "^10.2.2",
+    "pnpm": "^10.29.3"
   }
 }
