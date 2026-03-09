@@ -3,117 +3,77 @@ import AuthPage from '../../pages/authPage';
 
 const authPage = new AuthPage();
 
-/**
- * Attempt login with empty username
- */
+// Empty username
 When('I attempt to login with empty username and valid password', () => {
-  const pass = 'someValidPass';
+  const pass = 'secret_sauce';
   cy.log('Attempting login with empty username');
   authPage.attemptLogin('', pass);
 });
 
-/**
- * Attempt login with null password
- */
+// Null/empty password
 When('I attempt to login with valid username and null password', () => {
-  const user = 'someValidUser';
+  const user = 'standard_user';
   cy.log('Attempting login with null password');
   authPage.attemptLogin(user, '');
 });
 
-/**
- * Attempt login with special chars
- */
+// Special characters in username
 When('I attempt to login with special characters in username', () => {
   const user = '!@#$%^&*()';
-  const pass = 'validPass';
+  const pass = 'secret_sauce';
   cy.log('Attempting login with special characters in username');
   authPage.attemptLogin(user, pass);
 });
 
-/**
- * Attempt login with international chars
- */
+// International characters
 When('I attempt to login with international characters in username', () => {
   const user = '用户名';
-  const pass = 'validPass';
+  const pass = 'secret_sauce';
   cy.log('Attempting login with international characters in username');
   authPage.attemptLogin(user, pass);
 });
 
-/**
- * Attempt login with valid user invalid pass
- */
+// Valid username invalid password
 When('I attempt to login with valid username and invalid password', () => {
-  const user = 'validUser';
+  const user = 'standard_user';
   const pass = 'invalidPass';
   cy.log('Attempting login with valid username and invalid password');
   authPage.attemptLogin(user, pass);
 });
 
-/**
- * Attempt login with invalid user valid pass
- */
+// Invalid username valid password
 When('I attempt to login with invalid username and valid password', () => {
   const user = 'invalidUser';
-  const pass = 'validPass';
+  const pass = 'secret_sauce';
   cy.log('Attempting login with invalid username and valid password');
   authPage.attemptLogin(user, pass);
 });
 
-/**
- * Attempt login with min length
- */
+// Minimum length password
 When('I attempt to login with password of minimum length', () => {
   cy.log('Attempting login with minimum password length');
-  authPage.attemptLogin('user', 'a');
+  authPage.attemptLogin('standard_user', 'a');
 });
 
-/**
- * Attempt login in partitions
- */
+// Partitions
 When('I attempt to login with username in different partitions', () => {
   cy.log('Testing username equivalence partitions');
   authPage.attemptLogin('valid', 'pass');
   authPage.attemptLogin('invalid@domain', 'pass');
 });
 
-/**
- * Logout and open new tab
- */
-When('I logout and open a new tab', () => {
-  cy.get('#logout2').click();
-  cy.log('Logged out and simulating new tab by revisiting page');
-  cy.visit('/index.html');
-});
-
-/**
- * Logout and back button
- */
-When('I logout and use the back button', () => {
-  cy.get('#logout2').click();
-  cy.log('Logged out and using back button');
-  cy.go('back');
-});
-
-
-/**
- * Attempt login with case sensitive characters
- */
+// Case sensitivity
 When('I attempt to login with case sensitive characters in username', () => {
-  const user = 'LUcK123';
-  const pass = 'luck123';
+  const user = 'STandard_User';
+  const pass = 'secret_sauce';
   cy.log('Attempting login with case sensitive characters in username');
   authPage.attemptLogin(user, pass);
 });
 
-
-/**
- * Attempt login with leading or trailing spaces
- */
+// Leading/trailing spaces
 When('I attempt to login with leading or trailing spaces in username', () => {
-  const user = '    luck123   ';
-  const pass = 'luck123';
+  const user = '    standard_user   ';
+  const pass = 'secret_sauce';
   cy.log('Attempting login with leading or trailing spaces in username');
   authPage.attemptLogin(user, pass);
 });

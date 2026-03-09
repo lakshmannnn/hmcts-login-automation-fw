@@ -1,15 +1,15 @@
-Feature: Basic User Authentication
+Feature: Basic User Authentication (Sauce Demo)
   As a potential customer
-  I want to register and login to the DemoBlaze website
-  So that I can access personalized shopping features
+  I want to login to the Sauce Demo website
+  So that I can access the products page
 
   Background:
-    Given I navigate to the DemoBlaze homepage
+    Given I navigate to the Sauce Demo login page
     When I prepare the test environment
 
   @smoke
-  Scenario: Successful user registration and login
-    When I register a new unique user
+  Scenario: Successful login for a standard user
+    When I use a valid standard user
     And I log in with the registered user
     Then I should be successfully logged in
-    And I should see the welcome message for the registered user
+    And I should see the products page

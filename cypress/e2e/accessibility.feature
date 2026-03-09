@@ -1,10 +1,10 @@
-Feature: Accessibility Authentication Tests
+Feature: Accessibility Authentication Tests (Sauce Demo)
   As a user
   I want to test accessibility features
   So that I can ensure usability for all users
 
   Background:
-    Given I navigate to the DemoBlaze homepage
+    Given I navigate to the Sauce Demo login page
     When I prepare the test environment
 
   @accessibility

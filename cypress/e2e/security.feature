@@ -1,10 +1,10 @@
-Feature: Security Authentication Tests
+Feature: Security Authentication Tests (Sauce Demo)
   As a tester
   I want to test security vulnerabilities
   So that I can ensure safe login
 
   Background:
-    Given I navigate to the DemoBlaze homepage
+    Given I navigate to the Sauce Demo login page
     When I prepare the test environment
 
   @security
@@ -19,7 +19,7 @@ Feature: Security Authentication Tests
 
   @security
   Scenario: Verify login status after cache deletion
-    When I register a new unique user
+    When I use a valid standard user
     And I log in with the registered user
     Then I should be successfully logged in
     When I clear the browser cache and storage
