@@ -1,7 +1,7 @@
 {
-  "name": "hmcts-coding-exercise",
+  "name": "justice-digital-exercise",
   "version": "1.0.0",
-  "description": "hmcts-coding-exercise",
+  "description": "justice-digital-exercise",
   "main": "index.js",
   "directories": {
     "test": "test"
