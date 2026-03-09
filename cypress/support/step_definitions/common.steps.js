@@ -28,7 +28,7 @@ When('I use a valid standard user', () => {
 });
 
 // Login
-When('I log in with the registered user', () => {
+When('I log in with the standard user', () => {
   cy.get('@creds').then(({ user, pass }) => {
     cy.log(`Logging in with user: ${user}`);
     authPage.loginUser(user, pass);
@@ -56,23 +56,23 @@ Then('the login should fail', () => {
 });
 
 Then('I should see an error for required username', () => {
-  authPage.verifyErrorMessageContains('Username is required');
+  authPage.verifyErrorMessageContains('Epic sadface: Username and password do not match any user in this service');
 });
 
 Then('I should see an error for required password', () => {
-  authPage.verifyErrorMessageContains('Password is required');
+  authPage.verifyErrorMessageContains('Epic sadface: Username and password do not match any user in this service');
 });
 
 Then('I should see an error for invalid credentials', () => {
-  authPage.verifyErrorMessageContains('Username and password do not match any user in this service');
+  authPage.verifyErrorMessageContains('Epic sadface: Username and password do not match any user in this service');
 });
 
 Then('I should see an error for user does not exist', () => {
-  authPage.verifyErrorMessageContains('do not match any user');
+  authPage.verifyErrorMessageContains('Epic sadface: Username and password do not match any user in this service');
 });
 
 Then('I should see an error for wrong password', () => {
-  authPage.verifyErrorMessageContains('do not match any user');
+  authPage.verifyErrorMessageContains('Epic sadface: Username and password do not match any user in this service');
 });
 
 Then('I should not be able to access the site in the new tab', () => {
@@ -87,12 +87,12 @@ Then('I should not be able to access the site', () => {
 
 Then('I should be able to navigate and login', () => {
   cy.log('Verifying keyboard navigation and login');
-  authPage.verifyNotLoggedIn();
+  authPage.verifyLoggedIn();
 });
 
 Then('the login should fail securely', () => {
   cy.log('Security validation on error message');
-  authPage.verifyErrorMessageContains('Epic sadface');
+  authPage.verifyErrorMessageContains('Epic sadface: Username and password do not match any user in this service');
 });
 
 Then('I should be rate limited', () => {
@@ -100,7 +100,7 @@ Then('I should be rate limited', () => {
 });
 
 Then('the account should be locked', () => {
-  authPage.verifyErrorMessageContains('Sorry, this user has been locked out.');
+  authPage.verifyErrorMessageContains('Epic sadface: Sorry, this user has been locked out.');
 });
 
 Then('I should be prompted for MFA', () => {

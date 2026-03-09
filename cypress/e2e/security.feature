@@ -1,4 +1,4 @@
-Feature: Security Authentication Tests (Sauce Demo)
+Feature: Security Authentication Tests
   As a tester
   I want to test security vulnerabilities
   So that I can ensure safe login
@@ -20,7 +20,7 @@ Feature: Security Authentication Tests (Sauce Demo)
   @security
   Scenario: Verify login status after cache deletion
     When I use a valid standard user
-    And I log in with the registered user
+    And I log in with the standard user
     Then I should be successfully logged in
     When I clear the browser cache and storage
     And I refresh the page

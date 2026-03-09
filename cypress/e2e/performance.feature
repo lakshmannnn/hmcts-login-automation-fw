@@ -1,4 +1,4 @@
-Feature: Performance Authentication Tests (Sauce Demo)
+Feature: Performance Authentication Tests
   As a tester
   I want to test performance of login
   So that I can ensure fast response times

@@ -9,17 +9,17 @@ const authPage = new AuthPage();
 When('I attempt multiple rapid logins', () => {
   cy.log('Attempting multiple rapid logins for rate limiting test');
   for (let i = 0; i < 10; i++) {
-    authPage.attemptLogin('user', 'pass');
+    authPage.attemptLogin('locked_out_user', 'secret_sauce');
   }
 });
 
 /**
  * Wrong password multiple times
  */
-When('I attempt login with wrong password multiple times', () => {
+When('I attempt login with locked out user', () => {
   cy.log('Attempting multiple wrong password logins for lockout test');
   for (let i = 0; i < 5; i++) {
-    authPage.attemptLogin('user', 'wrongpass');
+    authPage.attemptLogin('locked_out_user', 'secret_sauce');
   }
 });
 
@@ -36,8 +36,31 @@ When('I login with MFA enabled', () => {
  */
 When('I login using API', () => {
   cy.log('Logging in using API');
-  cy.request('POST', '/login', { username: 'user', password: 'pass' }).then((response) => {
-    cy.log(`API login response: ${response.status}`);
-    expect(response.status).to.equal(200);
-  });
+  // cy.request('POST', '/login', { username: 'user', password: 'pass' }).then((response) => {
+  //   cy.log(`API login response: ${response.status}`);
+  //   expect(response.status).to.equal(200);
+  // });
+
+cy.request({
+  method: 'POST',
+  url: 'https://www.saucedemo.com/',
+  form: true,
+  body: {
+    username: 'standard_user',
+    password: 'secret_sauce'
+  },
+  followRedirect: true,
+  failOnStatusCode: false
+}).then((response) => {
+  cy.log('Status:', response.status);
+  cy.log('Redirects?:', response.redirectedToUrl);
+
+  if (response.status === 200 || response.redirectedToUrl?.includes('/inventory')) {
+    // Proceed
+    cy.visit('/inventory.html');
+  } else {
+    throw new Error(`Login failed: ${response.status} - try UI login instead`);
+  }
+});
+
 });

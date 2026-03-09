@@ -1,4 +1,4 @@
-Feature: Accessibility Authentication Tests (Sauce Demo)
+Feature: Accessibility Authentication Tests
   As a user
   I want to test accessibility features
   So that I can ensure usability for all users

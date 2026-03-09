@@ -2,7 +2,7 @@ class AuthPage {
   get loginUsername() { return '#user-name'; }
   get loginPassword() { return '#password'; }
   get loginSubmit() { return '#login-button'; }
-  get productsTitle() { return '.title'; }
+  get burgerMenu() { return '#react-burger-menu-btn'; }
   get inventoryList() { return '.inventory_list'; }
   get errorMessage() { return '[data-test="error"]'; }
 
@@ -18,7 +18,7 @@ class AuthPage {
   }
 
   verifyLoggedIn() {
-    cy.get(this.productsTitle, { timeout: 10000 }).should('be.visible').and('have.text', 'Products');
+    cy.get(this.burgerMenu, { timeout: 10000 }).should('be.visible').and('have.text', 'Open Menu');
     cy.get(this.inventoryList).should('be.visible');
   }
 

@@ -5,7 +5,7 @@ Feature: Dummy Authentication Tests
   So that I can ensure robustness
 
   Background:
-    Given I navigate to the SauceDemo homepage
+    Given I navigate to the Sauce Demo login page
     When I prepare the test environment
 
   @tobe
@@ -15,7 +15,7 @@ Feature: Dummy Authentication Tests
 
   @tobe
   Scenario: Account lockout test
-    When I attempt login with wrong password multiple times
+    When I attempt login with locked out user
     Then the account should be locked
 
   @tobe

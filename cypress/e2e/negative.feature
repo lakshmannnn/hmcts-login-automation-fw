@@ -1,4 +1,4 @@
-Feature: Negative Authentication Tests (Sauce Demo)
+Feature: Negative Authentication Tests
   As a tester
   I want to test invalid login scenarios
   So that I can ensure proper error handling
