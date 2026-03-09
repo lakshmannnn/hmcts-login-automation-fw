@@ -7,7 +7,7 @@ module.exports = defineConfig({
   projectId: "o64h7m",
   e2e: {
     specPattern: "cypress/e2e/**/*.feature",
-    baseUrl: "https://www.demoblaze.com",
+    baseUrl: "https://www.saucedemo.com",
     env:{
       defaultUser:"luck123",
       defaultPwd:"luck123"

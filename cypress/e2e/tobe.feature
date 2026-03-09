@@ -5,7 +5,7 @@ Feature: Dummy Authentication Tests
   So that I can ensure robustness
 
   Background:
-    Given I navigate to the DemoBlaze homepage
+    Given I navigate to the SauceDemo homepage
     When I prepare the test environment
 
   @tobe

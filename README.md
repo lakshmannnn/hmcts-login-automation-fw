@@ -2,9 +2,9 @@
 
 #                                CODING EXERCISE
 
-# DemoBlaze Login Automation Framework
+# SauceDemo Login Automation Framework
 
-This project implements a test automation framework for testing the login functionality of the DemoBlaze web application using Cypress with Cucumber (BDD).
+This project implements a test automation framework for testing the login functionality of the SauceDemo web application using Cypress with Cucumber (BDD).
 
 ## Overview
 
@@ -17,7 +17,7 @@ The framework automates login scenarios including positive, negative, security, 
 - **JavaScript/Node.js**: Programming language
 - **Mochawesome**: Test reporting
 - **Git**: Version control
-- Application Under Test : https://www.demoblaze.com/index.html
+- Application Under Test : https://www.SauceDemo.com/index.html
 
 ## Project Structure
 
@@ -61,7 +61,7 @@ cypress/
 1. Clone the repository:
    ```bash
    git clone <repository-url>
-   cd demoblaze-login-auto
+   cd SauceDemo-login-auto
    ```
 
 2. Install dependencies:
@@ -111,7 +111,7 @@ To merge reports:
 npx marge mochawesome-report-merged.json --reportDir cypress/reports/custom-reports --reportTitle 'Test Results'
 ```
 You can refer below folder for HTML reports:
-   demoblaze-login-auto\cypress\reports\custom-reports
+   SauceDemo-login-auto\cypress\reports\custom-reports
 You can refer package.json and use various commands(self-explanatory-names) :
    'npm run command-name-from-packagedotjson'
 
@@ -213,7 +213,7 @@ Given more time, I would:
 
 ## Troubleshooting
 
-- Ensure the DemoBlaze application is accessible
+- Ensure the SauceDemo application is accessible
 - Check network connectivity for external dependencies
 - Verify Node.js version compatibility
 - Clear Cypress cache if issues persist: `npx cypress cache clear`
