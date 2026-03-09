@@ -17,7 +17,7 @@ The framework automates login scenarios including positive, negative, security, 
 - **JavaScript/Node.js**: Programming language
 - **Mochawesome**: Test reporting
 - **Git**: Version control
-- Application Under Test : https://www.SauceDemo.com/index.html
+- Application Under Test : https://www.SauceDemo.com/
 
 ## Project Structure
 
@@ -27,7 +27,7 @@ cypress/
 │   ├── accessibility.feature     # Keyboard navigation tests
 │   ├── basic.feature             # Basic login functionality
 │   ├── cacheclear.feature        # Cache/session persistence tests
-│   ├── dummy.feature             # Advanced security features
+│   ├── tobe.feature             # Advanced security features
 │   ├── negative.feature          # Negative login scenarios
 │   ├── performance.feature       # Performance tests
 │   └── security.feature          # Security vulnerability tests
@@ -41,7 +41,7 @@ cypress/
 │   │   ├── accessibility.steps.js
 │   │   ├── basic.steps.js
 │   │   ├── common.steps.js       # Shared steps
-│   │   ├── dummy.steps.js
+│   │   ├── tobe.steps.js
 │   │   ├── negative.steps.js
 │   │   ├── performance.steps.js
 │   │   └── security.steps.js
@@ -73,7 +73,7 @@ cypress/
    ```bash
    npm install cypress --save-dev
    ```
-4. Install dependencies:
+4. Install npx:
    ```bash
    npm install npx
    ```
@@ -112,8 +112,8 @@ npx marge mochawesome-report-merged.json --reportDir cypress/reports/custom-repo
 ```
 You can refer below folder for HTML reports:
    SauceDemo-login-auto\cypress\reports\custom-reports
-You can refer package.json and use various commands(self-explanatory-names) :
-   'npm run command-name-from-packagedotjson'
+You can refer package.json and use various command(self-explanatory-names) :
+  ex:  'npm run command-name-from-packagedotjson'
 
 ## Test Scenarios
 

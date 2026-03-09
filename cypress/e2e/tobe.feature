@@ -14,11 +14,6 @@ Feature: Dummy Authentication Tests
     Then I should be rate limited
 
   @tobe
-  Scenario: Account lockout test
-    When I attempt login with locked out user
-    Then the account should be locked
-
-  @tobe
   Scenario: MFA test
     When I login with MFA enabled
     Then I should be prompted for MFA

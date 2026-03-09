@@ -9,18 +9,11 @@
 // ***********************************************
 // Below custom commands can also be used to perform authentication instead of POM methods*******
 // FOr now these are just placeholders.
-Cypress.Commands.add('signup', (username, password) => {
-  cy.get('#signin2').click();
-  cy.get('#sign-username').should('be.visible').type(username);
-  cy.get('#sign-password').type(password);
-  cy.window().then((win) => cy.stub(win, 'alert').as('signupAlert'));
-  cy.get('button[onclick="register()"]').click();
-  cy.get('@signupAlert').should('have.been.called');
-});
-
-Cypress.Commands.add('login', (username, password) => {
-  cy.get('#login2').click();
-  cy.get('#loginusername').should('be.visible').type(username);
-  cy.get('#loginpassword').type(password);
-  cy.get('button[onclick="logIn()"]').click();
-});
+// Cypress.Commands.add('signup', (username, password) => {
+//   cy.get('#signin2').click();
+//   cy.get('#sign-username').should('be.visible').type(username);
+//   cy.get('#sign-password').type(password);
+//   cy.window().then((win) => cy.stub(win, 'alert').as('signupAlert'));
+//   cy.get('button[onclick="register()"]').click();
+//   cy.get('@signupAlert').should('have.been.called');
+// });

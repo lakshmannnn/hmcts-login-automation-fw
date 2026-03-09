@@ -1,16 +1,17 @@
 {
     "username": [
-        "luck123",
-        "User2",
-        "User3",
-        "User4",
-        "User5"
+        "standard_user",
+        "locked_out_user",
+        "problem_user",
+        "performance_glitch_user",
+        "error_user",
+        "visual_user"
     ],
     "pwd": [
-        "luck123",
-        "RM6148",
-        "RM6200",
-        "RM6235",
-        "RM6094"
+        "secret_sauce",
+        "secret_sauce",
+        "secret_sauce",
+        "secret_sauce",
+        "secret_sauce"
     ]
 }

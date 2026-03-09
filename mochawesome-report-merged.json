@@ -111,8 +111,8 @@
               "skipped": false
             },
             {
-              "title": "Login with null password",
-              "fullTitle": "Negative Authentication Tests Login with null password",
+              "title": "Login with empty password",
+              "fullTitle": "Negative Authentication Tests Login with empty password",
               "timedOut": null,
               "duration": 0,
               "state": "pending",
@@ -743,8 +743,8 @@
               "skipped": false
             },
             {
-              "title": "Login with null password",
-              "fullTitle": "Negative Authentication Tests Login with null password",
+              "title": "Login with empty password",
+              "fullTitle": "Negative Authentication Tests Login with empty password",
               "timedOut": null,
               "duration": 0,
               "state": "pending",
@@ -1433,8 +1433,8 @@
               "skipped": false
             },
             {
-              "title": "Login with null password",
-              "fullTitle": "Negative Authentication Tests Login with null password",
+              "title": "Login with empty password",
+              "fullTitle": "Negative Authentication Tests Login with empty password",
               "timedOut": null,
               "duration": 1291,
               "state": "passed",
@@ -2153,8 +2153,8 @@
               "skipped": false
             },
             {
-              "title": "Login with null password",
-              "fullTitle": "Negative Authentication Tests Login with null password",
+              "title": "Login with empty password",
+              "fullTitle": "Negative Authentication Tests Login with empty password",
               "timedOut": null,
               "duration": 3076,
               "state": "passed",
@@ -2872,8 +2872,8 @@
               "skipped": false
             },
             {
-              "title": "Login with null password",
-              "fullTitle": "Negative Authentication Tests Login with null password",
+              "title": "Login with empty password",
+              "fullTitle": "Negative Authentication Tests Login with empty password",
               "timedOut": null,
               "duration": 1232,
               "state": "passed",

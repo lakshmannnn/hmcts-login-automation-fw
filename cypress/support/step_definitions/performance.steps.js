@@ -7,8 +7,8 @@ When('I login with existing logons', () => {
   const start = Date.now();
   cy.log('Enter logins to check response time');
   cy.get(authPage.loginUsername).should('be.visible');
-  cy.get(authPage.loginUsername).focus().type('standard_user');
-  cy.get(authPage.loginPassword).focus().type('secret_sauce');
+  cy.get(authPage.loginUsername).focus().type(Cypress.env("username"));
+  cy.get(authPage.loginPassword).focus().type(Cypress.env("password"));
   cy.get(authPage.loginSubmit).click();
   authPage.verifyLoggedIn();
   const end = Date.now();
@@ -18,7 +18,14 @@ When('I login with existing logons', () => {
 
 // Rapid type
 When('I rapidly type username in the username field and click Login button', () => {
-  const terms = ['User1'];
+  const terms = [
+    'standard_user',
+    'locked_out_user',
+    'problem_user',
+    'performance_glitch_user',
+    'error_user',
+    'visual_user'
+  ];
   terms.forEach(term => {
     cy.get(authPage.loginUsername).should('be.visible');
     cy.get(authPage.loginUsername).clear().type(term);

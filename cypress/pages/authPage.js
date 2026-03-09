@@ -7,7 +7,7 @@ class AuthPage {
   get errorMessage() { return '[data-test="error"]'; }
 
   navigateToHome() {
-    cy.visit('https://www.saucedemo.com/');
+    cy.visit('/');
   }
 
   loginUser(user, pass) {
@@ -26,8 +26,8 @@ class AuthPage {
     cy.get(this.loginUsername, { timeout: 10000 }).should('be.visible');
   }
 
-  verifyWelcomeMessage() {
-    this.verifyLoggedIn();
+  verifyUrl() {
+    cy.url().should('include', '/inventory.html');
   }
 
   verifyErrorMessageContains(text) {
@@ -47,6 +47,16 @@ class AuthPage {
     if (pass !== undefined) this.typeAndVerify(this.loginPassword, pass);
     cy.get(this.loginSubmit).click();
   }
+
+    attemptLoginOnlyUsername(user) {
+    if (user !== undefined) this.typeAndVerify(this.loginUsername, user);
+    cy.get(this.loginSubmit).click();
+  }
+    attemptLoginOnlyPasssword(pass) {
+    if (pass !== undefined) this.typeAndVerify(this.loginPassword, pass);
+    cy.get(this.loginSubmit).click();
+  }
+
 }
 
 export default AuthPage;

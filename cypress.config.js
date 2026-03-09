@@ -8,9 +8,15 @@ module.exports = defineConfig({
   e2e: {
     specPattern: "cypress/e2e/**/*.feature",
     baseUrl: "https://www.saucedemo.com",
-    env:{
-      defaultUser:"luck123",
-      defaultPwd:"luck123"
+    env: {
+      username: "standard_user",
+      username_lockedout: "locked_out_user",
+      password: "secret_sauce",
+      password_incorrect: "rotten_sauce",
+      err_msg_incorrect_username_or_password:"Epic sadface: Username and password do not match any user in this service",
+      err_msg_locked_out_user:"Epic sadface: Sorry, this user has been locked out.",
+      err_msg_enter_password:"Epic sadface: Password is required",
+      err_msg_enter_username:"Epic sadface: Username is required",
     },
     reporter: 'mochawesome',
     reporterOptions: {

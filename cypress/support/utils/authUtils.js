@@ -36,12 +36,3 @@ export function logoutIfLoggedIn() {
     }
   });
 }
-
-
-/**
- * Verifies user is not logged in
- */
-export function verifyNotLoggedIn() {
-  cy.get('#nameofuser').should('not.exist');
-  cy.log('Verified user is not logged in');
-}

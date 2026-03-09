@@ -21,9 +21,9 @@ When('I prepare the test environment', () => {
   clearBrowserStorage();
 });
 
-// Credentials setup (Sauce Demo has no registration)
+// Credentials setup
 When('I use a valid standard user', () => {
-  const creds = { user: 'standard_user', pass: 'secret_sauce' };
+  const creds = { user: Cypress.env("username"), pass: Cypress.env("password") };
   cy.wrap(creds).as('creds');
 });
 
@@ -43,7 +43,7 @@ Then('I should be successfully logged in', () => {
 
 Then('I should see the products page', () => {
   cy.log('Verifying user is on the Products page');
-  authPage.verifyWelcomeMessage();
+  authPage.verifyUrl();
 });
 
 Then('I should not be logged in', () => {
@@ -55,24 +55,20 @@ Then('the login should fail', () => {
   cy.log('Login failed as expected');
 });
 
-Then('I should see an error for required username', () => {
-  authPage.verifyErrorMessageContains('Epic sadface: Username and password do not match any user in this service');
+Then('I should see generic error to fix incorrect username or password', () => {
+  authPage.verifyErrorMessageContains(Cypress.env("err_msg_incorrect_username_or_password"));
 });
 
-Then('I should see an error for required password', () => {
-  authPage.verifyErrorMessageContains('Epic sadface: Username and password do not match any user in this service');
+Then('I should see error related to locked out username', () => {
+  authPage.verifyErrorMessageContains(Cypress.env("err_msg_locked_out_user"));
 });
 
-Then('I should see an error for invalid credentials', () => {
-  authPage.verifyErrorMessageContains('Epic sadface: Username and password do not match any user in this service');
+Then('I should see error to enter password', () => {
+  authPage.verifyErrorMessageContains(Cypress.env("err_msg_enter_password"));
 });
 
-Then('I should see an error for user does not exist', () => {
-  authPage.verifyErrorMessageContains('Epic sadface: Username and password do not match any user in this service');
-});
-
-Then('I should see an error for wrong password', () => {
-  authPage.verifyErrorMessageContains('Epic sadface: Username and password do not match any user in this service');
+Then('I should see error to enter username', () => {
+  authPage.verifyErrorMessageContains(Cypress.env("err_msg_enter_username"));
 });
 
 Then('I should not be able to access the site in the new tab', () => {
@@ -97,10 +93,6 @@ Then('the login should fail securely', () => {
 
 Then('I should be rate limited', () => {
   cy.log('No explicit rate limit in Sauce Demo - placeholder');
-});
-
-Then('the account should be locked', () => {
-  authPage.verifyErrorMessageContains('Epic sadface: Sorry, this user has been locked out.');
 });
 
 Then('I should be prompted for MFA', () => {
