@@ -7,7 +7,7 @@ Feature: Basic User Authentication
     Given I navigate to the Sauce Demo login page
     When I prepare the test environment
 
-  @smoke
+  @smoke @ui @basicUIAPI
   Scenario: Successful login for a standard user
     When I use a valid standard user
     And I log in with the standard user

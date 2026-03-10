@@ -1,0 +1,21 @@
+{
+  "valid": {
+    "id": 100000001,
+    "petId": 198772,
+    "quantity": 2,
+    "shipDate": "2026-10-20T10:00:00.000Z",
+    "status": "placed",
+    "complete": true
+  },
+  "invalidMissingFields": {
+    "quantity": 1
+  },
+  "invalidTypes": {
+    "id": "abc",
+    "petId": "not-a-number",
+    "quantity": "three",
+    "shipDate": 123,
+    "status": 42,
+    "complete": "yes"
+  }
+}

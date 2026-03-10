@@ -99,9 +99,25 @@ cypress/
    ```bash
    npx cypress run --headed --browser chrome
    ```
+5. Run Basic Sauce Demo UI and Pet Store API tests:
+   ```bash
+   npx cypress run --spec cypress/e2e/ --env TAGS='@basicUIAPI' --headed --browser chrome
 
-![alt text](<test execution summary.jpg>)
 
+6. Run Basic Sauce Demo UI:
+   ```bash
+   npx cypress run --spec cypress/e2e/ --env TAGS='@ui' --headed --browser chrome
+
+7. Run Basic Pet Store API tests:
+   ```bash
+   npx cypress run --spec cypress/e2e/ --env TAGS='@api' --headed --browser chrome
+
+8. Run Basic Pet Store API tests:
+   ```bash
+   npx cypress run --spec cypress/e2e/ --env TAGS='@smoke' --headed --browser chrome
+
+### Execution Summary Report
+![alt text](image-1.png)
 ### Generating Reports
 
 Reports are automatically generated in `cypress/reports/` using Mochawesome.
@@ -118,15 +134,29 @@ You can refer package.json and use various command(self-explanatory-names) :
 ## Test Scenarios
 
 ### Positive Scenarios
-- Successful user registration and login
-- Welcome message verification
+  Sauce Demo UI
+- Successful user login via Sauce Demo UI
+- Products verification to confirm user loggedin
+   Pet Store API
+- Successful order creation using possible inputs
+- Retrieve an order by id
+- Delete an existing order by id
 
 ### Negative Scenarios
+  Sauce Demo UI
 - Empty username/password
 - Invalid credentials
 - Special characters
 - International characters
 - Boundary value analysis
+- Account lockout
+   Pet Store API
+- Duplicate order creation
+- Orders created with invalid input parameters/fields
+- Invalid order creation
+- Retrieving Non existent order id
+- Order created with malformed JSON
+
 
 ### Security Scenarios
 - SQL injection attempts
@@ -142,7 +172,6 @@ You can refer package.json and use various command(self-explanatory-names) :
 
 ### Other Scenarios
 - Rate limiting
-- Account lockout
 - MFA simulation
 - API login
 
@@ -192,10 +221,9 @@ You can refer package.json and use various command(self-explanatory-names) :
 
 Given more time, I would:
 - Implement additional advanced scenarios such as scenarios part of 'tobe.feature'
-- Further finetuning by introducing Scenario Outline and forEach to parameterize various permutation/combinations of username/pwd
 - USe fixtures and Custom commands to make framework better maintainable,scalable.
 - Enhance Cross browser testing (for now we can use 'npm run runMultiBrowser' from package.json)
-- Add API testing integration, mockup and contract testing.
+- Add Sauce Demo API testing integration, mockup and contract testing.
 - Implement parallel test execution
 - Add data-driven testing with CSV/JSON
 - Integrate with CI/CD pipelines (Jenkins)
