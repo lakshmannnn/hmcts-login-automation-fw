@@ -9,6 +9,7 @@ module.exports = defineConfig({
     specPattern: "cypress/e2e/**/*.feature",
     baseUrl: "https://www.saucedemo.com",
     env: {
+      API_URL:"https://petstore.swagger.io/v2",
       username: "standard_user",
       username_lockedout: "locked_out_user",
       password: "secret_sauce",

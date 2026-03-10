@@ -14,7 +14,7 @@
     "triggerAllTests-firefox": "npx cypress run --browser firefox",
     "triggerAllTests-headed-chrome": "npx cypress open --browser chrome",
     "triggerSpecificTests-headless": "npx cypress run --spec cypress/e2e/basic.feature",
-    "record-testruns-to-cypress-cloud-dashboard": "npx cypress run --record --key a0560a3b-65ed-477b-9cd4-0630cab4803e",
+    "record-testruns-to-cypress-cloud-dashboard": "npx cypress run --record --key cypress_project_key_to_be_extracted_from_cypress_cloud",
     "triggerCucmberTests-tags": "npx cypress run --spec cypress/e2e/basic.feature --env TAGS=@valid --headed --browser chrome",
     "triggerCucmberTests-tags-multiple-or": "npx cypress run --spec cypress/e2e/basic.feature --env TAGS='@caseVariations or @noSearchTerm' --headed --browser chrome",
     "triggerCucmberTests-tags-multiple-and": "npx cypress run --spec cypress/e2e/basic.feature --env TAGS='@caseVariations and @noSearchTerm' --headed --browser chrome",
