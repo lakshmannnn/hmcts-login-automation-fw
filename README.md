@@ -17,8 +17,8 @@ The framework automates login scenarios including positive, negative, security, 
 - **JavaScript/Node.js**: Programming language
 - **Mochawesome**: Test reporting
 - **Git**: Version control
-- Application Under Test : https://www.SauceDemo.com/
-
+- Application Under Test : https://www.saucedemo.com/
+- API Under Test : https://petstore.swagger.io/#/store/placeOrder
 ## Project Structure
 
 ```
@@ -26,9 +26,9 @@ cypress/
 ├── e2e/                          # Feature files (BDD scenarios)
 │   ├── accessibility.feature     # Keyboard navigation tests
 │   ├── basic.feature             # Basic login functionality
-│   ├── cacheclear.feature        # Cache/session persistence tests
-│   ├── tobe.feature             # Advanced security features
-│   ├── negative.feature          # Negative login scenarios
+│   ├── place-order-api.feature   # API positive and negatove tests
+│   ├── negative.feature          # Advanced security features
+│   ├── tobe.feature              # Negative login scenarios
 │   ├── performance.feature       # Performance tests
 │   └── security.feature          # Security vulnerability tests
 ├── fixtures/                     # Test data
@@ -41,6 +41,7 @@ cypress/
 │   │   ├── accessibility.steps.js
 │   │   ├── basic.steps.js
 │   │   ├── common.steps.js       # Shared steps
+│   │   ├── place-order-api.steps.js
 │   │   ├── tobe.steps.js
 │   │   ├── negative.steps.js
 │   │   ├── performance.steps.js
@@ -117,7 +118,7 @@ cypress/
    npx cypress run --spec cypress/e2e/ --env TAGS='@smoke' --headed --browser chrome
 
 ### Execution Summary Report
-![alt text](image-1.png)
+![alt text](test execution summary.png)
 ### Generating Reports
 
 Reports are automatically generated in `cypress/reports/` using Mochawesome.
@@ -131,6 +132,16 @@ You can refer below folder for HTML reports:
 You can refer package.json and use various command(self-explanatory-names) :
   ex:  'npm run command-name-from-packagedotjson'
 
+npx mochawesome-merge cypress/reports/*.json > mochawesome-report-merged.json
+npx marge mochawesome-report-merged.json --reportDir cypress/reports/custom-reports --reportTitle 'Test Results'
+
+Example HTML:
+C:\Automation\Cypress\HMCTS\saucedemo-login-auto\mochawesome-report-merged.json
+
+Cypress-CLoud reports:
+npx cypress run --record --key <<proj-key>>
+https://cloud.cypress.io/projects/gt5ztm/runs/1/overview?roarHideRunsWithDiffGroupsAndTags=1
+
 ## Test Scenarios
 
 ### Positive Scenarios
@@ -143,14 +154,14 @@ You can refer package.json and use various command(self-explanatory-names) :
 - Delete an existing order by id
 
 ### Negative Scenarios
-  Sauce Demo UI
+Sauce Demo UI
 - Empty username/password
 - Invalid credentials
 - Special characters
 - International characters
 - Boundary value analysis
 - Account lockout
-   Pet Store API
+Pet Store API
 - Duplicate order creation
 - Orders created with invalid input parameters/fields
 - Invalid order creation
